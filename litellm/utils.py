@@ -4400,13 +4400,14 @@ def litellm_telemetry(data):
             "data": data,
             "version:": pkg_version 
         }
+        print(f" Was going to send: {payload}")
         # Make the POST request to litellm logging api
-        response = requests.post(
+        # response = requests.post(
             "https://litellm-logging.onrender.com/logging",
-            headers={"Content-Type": "application/json"},
-            json=payload,
-        )
-        response.raise_for_status()  # Raise an exception for HTTP errors
+            # headers={"Content-Type": "application/json"},
+            # json=payload,
+        # )
+        # response.raise_for_status()  # Raise an exception for HTTP errors
     except:
         # [Non-Blocking Error]
         return
